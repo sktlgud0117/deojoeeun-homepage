@@ -215,7 +215,8 @@ function EcommerceSite() {
                   paddingBottom: '12px',
                   border: '2px solid #d1d5db',
                   borderRadius: '8px',
-                  outline: 'none'
+                  outline: 'none',
+                  boxSizing: 'border-box'
                 }}
               />
             </div>
