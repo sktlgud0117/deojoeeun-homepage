@@ -441,12 +441,12 @@ function EcommerceSite() {
               }}>
                 전화
               </h3>
-              <p style={{ fontSize: '18px' }}>02-1234-5678</p>
+              <p style={{ fontSize: '18px' }}>010-6548-9086</p>
               <p style={{
                 fontSize: '14px',
                 opacity: 0.9
               }}>
-                평일 09:00 ~ 18:00
+                평일 09:00 ~ 20:00
               </p>
             </div>
 
@@ -459,7 +459,7 @@ function EcommerceSite() {
               }}>
                 이메일
               </h3>
-              <p style={{ fontSize: '18px' }}>info@deojoeeun.co.kr</p>
+              <p style={{ fontSize: '18px' }}>leesiwoo9086@gmail.com</p>
             </div>
 
             <div style={{ textAlign: 'center' }}>
@@ -471,13 +471,13 @@ function EcommerceSite() {
               }}>
                 주소
               </h3>
-              <p style={{ fontSize: '18px' }}>서울시 강남구 테헤란로 123</p>
+              <p style={{ fontSize: '18px' }}>경기도 남양주시 별내3로 322, 402호</p>
             </div>
           </div>
 
           <div style={{ textAlign: 'center' }}>
             <a
-              href="mailto:info@deojoeeun.co.kr"
+              href="mailto:leesiwoo9086@gmail.com"
               style={{
                 display: 'inline-block',
                 backgroundColor: '#fff',
@@ -507,7 +507,7 @@ function EcommerceSite() {
         textAlign: 'center'
       }}>
         <div style={{ maxWidth: '80rem', margin: '0 auto' }}>
-          <p>&copy; 2024 더조은컴퍼니. All rights reserved.</p>
+          <p>&copy; 2025 더조은컴퍼니. All rights reserved.</p>
         </div>
       </footer>
     </div>
