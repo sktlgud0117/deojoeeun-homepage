@@ -410,6 +410,121 @@ function EcommerceSite() {
         </div>
       </section>
 
+      {/* CEO Message Section */}
+      <section style={{
+        padding: '64px 16px',
+        backgroundColor: '#fff'
+      }}>
+        <div style={{ maxWidth: '80rem', margin: '0 auto' }}>
+          <h2 style={{
+            fontSize: '36px',
+            fontWeight: 'bold',
+            color: '#111827',
+            marginBottom: '48px',
+            textAlign: 'center'
+          }}>
+            대표 인사말
+          </h2>
+          
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '48px',
+            alignItems: 'center'
+          }}>
+            {/* CEO Profile Image */}
+            <div style={{
+              backgroundColor: '#e0e7ff',
+              borderRadius: '8px',
+              height: '400px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '48px',
+              color: '#2563eb'
+            }}>
+              대표 사진
+            </div>
+
+            {/* CEO Message */}
+            <div>
+              <h3 style={{
+                fontSize: '28px',
+                fontWeight: 'bold',
+                color: '#111827',
+                marginBottom: '12px'
+              }}>
+                대표 이시우
+              </h3>
+              <p style={{
+                fontSize: '14px',
+                color: '#6b7280',
+                marginBottom: '24px'
+              }}>
+                더조은컴퍼니 대표이사
+              </p>
+
+              <div style={{
+                borderLeft: '4px solid #2563eb',
+                paddingLeft: '24px',
+                marginBottom: '32px'
+              }}>
+                <p style={{
+                  fontSize: '18px',
+                  color: '#111827',
+                  fontStyle: 'italic',
+                  marginBottom: '16px'
+                }}>
+                  "고객을 먼저 생각하고, 신뢰를 바탕으로 하는 유통"
+                </p>
+              </div>
+
+              <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '16px'
+              }}>
+                <div>
+                  <h4 style={{
+                    fontSize: '16px',
+                    fontWeight: 'bold',
+                    color: '#2563eb',
+                    marginBottom: '8px'
+                  }}>
+                    유통업에 임하는 자세
+                  </h4>
+                  <p style={{
+                    fontSize: '15px',
+                    color: '#374151',
+                    lineHeight: '1.6'
+                  }}>
+                    더조은컴퍼니는 단순히 상품을 공급하는 것이 아닙니다. 고객의 신뢰를 얻기 위해 품질 좋은 상품, 정확한 배송, 성실한 거래를 최우선으로 생각합니다. 20년 이상의 경험으로 축적된 네트워크를 바탕으로 최고의 서비스를 제공하겠습니다.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 style={{
+                    fontSize: '16px',
+                    fontWeight: 'bold',
+                    color: '#2563eb',
+                    marginBottom: '8px'
+                  }}>
+                    고객을 생각하는 마음
+                  </h4>
+                  <p style={{
+                    fontSize: '15px',
+                    color: '#374151',
+                    lineHeight: '1.6'
+                  }}>
+                    고객의 성공이 곧 저희의 성공이라고 생각합니다. 따라서 고객의 입장에서 생각하고, 필요한 것이 무엇인지 항상 묻고 듣겠습니다. 함께 성장하는 파트너로서 항상 최선을 다하겠습니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" style={{
         padding: '64px 16px',
@@ -441,12 +556,12 @@ function EcommerceSite() {
               }}>
                 전화
               </h3>
-              <p style={{ fontSize: '18px' }}>010-6548-9086</p>
+              <p style={{ fontSize: '18px' }}>02-1234-5678</p>
               <p style={{
                 fontSize: '14px',
                 opacity: 0.9
               }}>
-                평일 09:00 ~ 20:00
+                평일 09:00 ~ 18:00
               </p>
             </div>
 
@@ -459,7 +574,7 @@ function EcommerceSite() {
               }}>
                 이메일
               </h3>
-              <p style={{ fontSize: '18px' }}>leesiwoo9086@gmail.com</p>
+              <p style={{ fontSize: '18px' }}>info@deojoeeun.co.kr</p>
             </div>
 
             <div style={{ textAlign: 'center' }}>
@@ -471,13 +586,13 @@ function EcommerceSite() {
               }}>
                 주소
               </h3>
-              <p style={{ fontSize: '18px' }}>경기도 남양주시 별내3로 322, 402호</p>
+              <p style={{ fontSize: '18px' }}>서울시 강남구 테헤란로 123</p>
             </div>
           </div>
 
           <div style={{ textAlign: 'center' }}>
             <a
-              href="mailto:leesiwoo9086@gmail.com"
+              href="mailto:info@deojoeeun.co.kr"
               style={{
                 display: 'inline-block',
                 backgroundColor: '#fff',
@@ -507,7 +622,7 @@ function EcommerceSite() {
         textAlign: 'center'
       }}>
         <div style={{ maxWidth: '80rem', margin: '0 auto' }}>
-          <p>&copy; 2025 더조은컴퍼니. All rights reserved.</p>
+          <p>&copy; 2024 더조은컴퍼니. All rights reserved.</p>
         </div>
       </footer>
     </div>
