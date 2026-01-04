@@ -454,7 +454,7 @@ function EcommerceSite() {
                 color: '#111827',
                 marginBottom: '12px'
               }}>
-                대표 이시우
+                CEO 이시우
               </h3>
               <p style={{
                 fontSize: '14px',
