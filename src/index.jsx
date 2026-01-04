@@ -423,7 +423,7 @@ function EcommerceSite() {
             marginBottom: '48px',
             textAlign: 'center'
           }}>
-            대표 인사말
+            CEO 인사말
           </h2>
           
           <div style={{
