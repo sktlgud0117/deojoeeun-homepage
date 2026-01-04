@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
+import ReactDOM from 'react-dom/client';
 import { Menu, X, Search, ShoppingBag, Phone, Mail, MapPin } from 'lucide-react';
+import './index.css';
 
-export default function EcommerceSite() {
+function EcommerceSite() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('전체');
   const [searchTerm, setSearchTerm] = useState('');
 
-  // 상품 데이터 - 여기서 쉽게 추가/삭제 가능
   const products = [
     {
       id: 1,
@@ -54,7 +55,6 @@ export default function EcommerceSite() {
 
   const categories = ['전체', '식품류', '일용품', '가구'];
 
-  // 필터링 로직
   const filteredProducts = products.filter(product => {
     const matchCategory = selectedCategory === '전체' || product.category === selectedCategory;
     const matchSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
@@ -62,78 +62,189 @@ export default function EcommerceSite() {
   });
 
   return (
-    <div className="min-h-screen bg-white">
+    <div style={{ minHeight: '100vh', backgroundColor: '#fff' }}>
       {/* Navigation */}
-      <nav className="fixed w-full bg-white shadow-md z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center gap-2">
-              <ShoppingBag className="text-blue-600" size={32} />
-              <div className="text-2xl font-bold text-blue-600">더조은컴퍼니</div>
-            </div>
-            
-            {/* Desktop Menu */}
-            <div className="hidden md:flex gap-8">
-              <a href="#products" className="text-gray-700 hover:text-blue-600 transition font-semibold">상품</a>
-              <a href="#about" className="text-gray-700 hover:text-blue-600 transition font-semibold">회사소개</a>
-              <a href="#contact" className="text-gray-700 hover:text-blue-600 transition font-semibold">문의</a>
+      <nav style={{
+        position: 'fixed',
+        width: '100%',
+        backgroundColor: '#fff',
+        boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
+        zIndex: 50,
+        top: 0
+      }}>
+        <div style={{ maxWidth: '80rem', margin: '0 auto', padding: '0 1rem' }}>
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            height: '64px'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <ShoppingBag size={32} color="#2563eb" />
+              <div style={{
+                fontSize: '24px',
+                fontWeight: 'bold',
+                color: '#2563eb'
+              }}>
+                더조은컴퍼니
+              </div>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden">
+            <div style={{
+              display: 'flex',
+              gap: '2rem',
+              alignItems: 'center'
+            }}>
+              <a href="#products" style={{
+                color: '#374151',
+                textDecoration: 'none',
+                fontWeight: '600',
+                cursor: 'pointer'
+              }}>상품</a>
+              <a href="#about" style={{
+                color: '#374151',
+                textDecoration: 'none',
+                fontWeight: '600',
+                cursor: 'pointer'
+              }}>회사소개</a>
+              <a href="#contact" style={{
+                color: '#374151',
+                textDecoration: 'none',
+                fontWeight: '600',
+                cursor: 'pointer'
+              }}>문의</a>
+            </div>
+
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)} style={{
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer'
+            }}>
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
 
-          {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="md:hidden pb-4 flex flex-col gap-4">
-              <a href="#products" className="text-gray-700 hover:text-blue-600">상품</a>
-              <a href="#about" className="text-gray-700 hover:text-blue-600">회사소개</a>
-              <a href="#contact" className="text-gray-700 hover:text-blue-600">문의</a>
+            <div style={{
+              paddingBottom: '1rem',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1rem'
+            }}>
+              <a href="#products" style={{
+                color: '#374151',
+                textDecoration: 'none'
+              }}>상품</a>
+              <a href="#about" style={{
+                color: '#374151',
+                textDecoration: 'none'
+              }}>회사소개</a>
+              <a href="#contact" style={{
+                color: '#374151',
+                textDecoration: 'none'
+              }}>문의</a>
             </div>
           )}
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-12 bg-gradient-to-r from-blue-50 to-indigo-50 px-4">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">더조은컴퍼니</h1>
-          <p className="text-xl text-gray-600 mb-8">믿을 수 있는 유통 전문회사</p>
+      <section style={{
+        paddingTop: '128px',
+        paddingBottom: '48px',
+        background: 'linear-gradient(to right, #eff6ff, #e0e7ff)',
+        padding: '128px 16px 48px'
+      }}>
+        <div style={{ maxWidth: '80rem', margin: '0 auto', textAlign: 'center' }}>
+          <h1 style={{
+            fontSize: '48px',
+            fontWeight: 'bold',
+            color: '#111827',
+            marginBottom: '16px'
+          }}>
+            더조은컴퍼니
+          </h1>
+          <p style={{
+            fontSize: '20px',
+            color: '#4b5563',
+            marginBottom: '32px'
+          }}>
+            믿을 수 있는 유통 전문회사
+          </p>
         </div>
       </section>
 
       {/* Products Section */}
-      <section id="products" className="py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">유통 상품</h2>
+      <section id="products" style={{
+        padding: '64px 16px'
+      }}>
+        <div style={{ maxWidth: '80rem', margin: '0 auto' }}>
+          <h2 style={{
+            fontSize: '36px',
+            fontWeight: 'bold',
+            color: '#111827',
+            marginBottom: '32px',
+            textAlign: 'center'
+          }}>
+            유통 상품
+          </h2>
 
           {/* Search Bar */}
-          <div className="mb-8 max-w-2xl mx-auto">
-            <div className="relative">
-              <Search className="absolute left-4 top-4 text-gray-400" size={20} />
+          <div style={{
+            marginBottom: '32px',
+            maxWidth: '512px',
+            margin: '0 auto 32px'
+          }}>
+            <div style={{ position: 'relative' }}>
+              <Search size={20} style={{
+                position: 'absolute',
+                left: '16px',
+                top: '12px',
+                color: '#9ca3af'
+              }} />
               <input
                 type="text"
                 placeholder="상품 검색..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-600"
+                style={{
+                  width: '100%',
+                  paddingLeft: '48px',
+                  paddingRight: '16px',
+                  paddingTop: '12px',
+                  paddingBottom: '12px',
+                  border: '2px solid #d1d5db',
+                  borderRadius: '8px',
+                  outline: 'none'
+                }}
               />
             </div>
           </div>
 
           {/* Category Filter */}
-          <div className="flex gap-3 mb-8 overflow-x-auto pb-2 justify-center flex-wrap">
+          <div style={{
+            display: 'flex',
+            gap: '12px',
+            marginBottom: '32px',
+            justifyContent: 'center',
+            flexWrap: 'wrap'
+          }}>
             {categories.map(category => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-2 rounded-full font-semibold whitespace-nowrap transition ${
-                  selectedCategory === category
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                }`}
+                style={{
+                  paddingLeft: '24px',
+                  paddingRight: '24px',
+                  paddingTop: '8px',
+                  paddingBottom: '8px',
+                  borderRadius: '9999px',
+                  fontWeight: '600',
+                  border: 'none',
+                  cursor: 'pointer',
+                  backgroundColor: selectedCategory === category ? '#2563eb' : '#e5e7eb',
+                  color: selectedCategory === category ? '#fff' : '#374151'
+                }}
               >
                 {category}
               </button>
@@ -141,33 +252,89 @@ export default function EcommerceSite() {
           </div>
 
           {/* Products Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+            gap: '32px'
+          }}>
             {filteredProducts.length > 0 ? (
               filteredProducts.map(product => (
-                <div key={product.id} className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition">
-                  {/* Product Image */}
-                  <div className="w-full h-64 bg-gray-100 overflow-hidden">
+                <div key={product.id} style={{
+                  backgroundColor: '#fff',
+                  border: '1px solid #e5e7eb',
+                  borderRadius: '8px',
+                  overflow: 'hidden',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+                }}>
+                  <div style={{
+                    width: '100%',
+                    height: '256px',
+                    backgroundColor: '#f3f4f6',
+                    overflow: 'hidden'
+                  }}>
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="w-full h-full object-cover hover:scale-105 transition"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover'
+                      }}
                     />
                   </div>
-                  
-                  {/* Product Info */}
-                  <div className="p-6">
-                    <p className="text-sm text-blue-600 font-semibold mb-2">{product.category}</p>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h3>
-                    <p className="text-gray-600 mb-4">{product.description}</p>
-                    <button className="w-full bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 transition">
+
+                  <div style={{ padding: '24px' }}>
+                    <p style={{
+                      fontSize: '14px',
+                      color: '#2563eb',
+                      fontWeight: '600',
+                      marginBottom: '8px'
+                    }}>
+                      {product.category}
+                    </p>
+                    <h3 style={{
+                      fontSize: '20px',
+                      fontWeight: 'bold',
+                      color: '#111827',
+                      marginBottom: '8px'
+                    }}>
+                      {product.name}
+                    </h3>
+                    <p style={{
+                      color: '#4b5563',
+                      marginBottom: '16px'
+                    }}>
+                      {product.description}
+                    </p>
+                    <button style={{
+                      width: '100%',
+                      backgroundColor: '#2563eb',
+                      color: '#fff',
+                      fontWeight: '600',
+                      paddingTop: '8px',
+                      paddingBottom: '8px',
+                      borderRadius: '6px',
+                      border: 'none',
+                      cursor: 'pointer'
+                    }}>
                       문의하기
                     </button>
                   </div>
                 </div>
               ))
             ) : (
-              <div className="col-span-full text-center py-12">
-                <p className="text-gray-500 text-lg">상품을 찾을 수 없습니다.</p>
+              <div style={{
+                gridColumn: '1 / -1',
+                textAlign: 'center',
+                paddingTop: '48px',
+                paddingBottom: '48px'
+              }}>
+                <p style={{
+                  color: '#6b7280',
+                  fontSize: '18px'
+                }}>
+                  상품을 찾을 수 없습니다.
+                </p>
               </div>
             )}
           </div>
@@ -175,20 +342,67 @@ export default function EcommerceSite() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-16 px-4 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">회사소개</h2>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="bg-blue-600 rounded-lg h-80"></div>
+      <section id="about" style={{
+        padding: '64px 16px',
+        backgroundColor: '#f9fafb'
+      }}>
+        <div style={{ maxWidth: '80rem', margin: '0 auto' }}>
+          <h2 style={{
+            fontSize: '36px',
+            fontWeight: 'bold',
+            color: '#111827',
+            marginBottom: '48px',
+            textAlign: 'center'
+          }}>
+            회사소개
+          </h2>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '48px',
+            alignItems: 'center'
+          }}>
+            <div style={{
+              backgroundColor: '#2563eb',
+              borderRadius: '8px',
+              height: '320px'
+            }}></div>
             <div>
-              <p className="text-lg text-gray-700 mb-6">
+              <p style={{
+                fontSize: '18px',
+                color: '#374151',
+                marginBottom: '24px'
+              }}>
                 더조은컴퍼니는 다양한 상품을 효율적으로 공급하는 신뢰할 수 있는 유통회사입니다.
               </p>
-              <ul className="space-y-4">
-                <li className="text-gray-700">✓ 다양한 카테고리의 상품 취급</li>
-                <li className="text-gray-700">✓ 안정적이고 빠른 배송</li>
-                <li className="text-gray-700">✓ 전국 네트워크</li>
-                <li className="text-gray-700">✓ 전문적인 고객 서비스</li>
+              <ul style={{
+                listStyle: 'none',
+                padding: 0,
+                margin: 0
+              }}>
+                <li style={{
+                  color: '#374151',
+                  marginBottom: '16px'
+                }}>
+                  ✓ 다양한 카테고리의 상품 취급
+                </li>
+                <li style={{
+                  color: '#374151',
+                  marginBottom: '16px'
+                }}>
+                  ✓ 안정적이고 빠른 배송
+                </li>
+                <li style={{
+                  color: '#374151',
+                  marginBottom: '16px'
+                }}>
+                  ✓ 전국 네트워크
+                </li>
+                <li style={{
+                  color: '#374151'
+                }}>
+                  ✓ 전문적인 고객 서비스
+                </li>
               </ul>
             </div>
           </div>
@@ -196,35 +410,86 @@ export default function EcommerceSite() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 px-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-center">문의하기</h2>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <Phone size={48} className="mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-2">전화</h3>
-              <p className="text-lg">02-1234-5678</p>
-              <p className="text-sm opacity-90">평일 09:00 ~ 18:00</p>
+      <section id="contact" style={{
+        padding: '64px 16px',
+        background: 'linear-gradient(to right, #2563eb, #1e40af)',
+        color: '#fff'
+      }}>
+        <div style={{ maxWidth: '80rem', margin: '0 auto' }}>
+          <h2 style={{
+            fontSize: '36px',
+            fontWeight: 'bold',
+            marginBottom: '48px',
+            textAlign: 'center'
+          }}>
+            문의하기
+          </h2>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '32px',
+            marginBottom: '48px'
+          }}>
+            <div style={{ textAlign: 'center' }}>
+              <Phone size={48} style={{ margin: '0 auto 16px' }} />
+              <h3 style={{
+                fontSize: '20px',
+                fontWeight: 'bold',
+                marginBottom: '8px'
+              }}>
+                전화
+              </h3>
+              <p style={{ fontSize: '18px' }}>02-1234-5678</p>
+              <p style={{
+                fontSize: '14px',
+                opacity: 0.9
+              }}>
+                평일 09:00 ~ 18:00
+              </p>
             </div>
-            
-            <div className="text-center">
-              <Mail size={48} className="mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-2">이메일</h3>
-              <p className="text-lg break-all">info@deojoeeun.co.kr</p>
+
+            <div style={{ textAlign: 'center' }}>
+              <Mail size={48} style={{ margin: '0 auto 16px' }} />
+              <h3 style={{
+                fontSize: '20px',
+                fontWeight: 'bold',
+                marginBottom: '8px'
+              }}>
+                이메일
+              </h3>
+              <p style={{ fontSize: '18px' }}>info@deojoeeun.co.kr</p>
             </div>
-            
-            <div className="text-center">
-              <MapPin size={48} className="mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-2">주소</h3>
-              <p className="text-lg">서울시 강남구 테헤란로 123</p>
+
+            <div style={{ textAlign: 'center' }}>
+              <MapPin size={48} style={{ margin: '0 auto 16px' }} />
+              <h3 style={{
+                fontSize: '20px',
+                fontWeight: 'bold',
+                marginBottom: '8px'
+              }}>
+                주소
+              </h3>
+              <p style={{ fontSize: '18px' }}>서울시 강남구 테헤란로 123</p>
             </div>
           </div>
 
-          <div className="mt-12 text-center">
-            <a 
+          <div style={{ textAlign: 'center' }}>
+            <a
               href="mailto:info@deojoeeun.co.kr"
-              className="inline-block bg-white text-blue-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition"
+              style={{
+                display: 'inline-block',
+                backgroundColor: '#fff',
+                color: '#2563eb',
+                fontWeight: 'bold',
+                paddingTop: '12px',
+                paddingBottom: '12px',
+                paddingLeft: '32px',
+                paddingRight: '32px',
+                borderRadius: '8px',
+                textDecoration: 'none',
+                cursor: 'pointer'
+              }}
             >
               이메일 문의하기
             </a>
@@ -233,11 +498,20 @@ export default function EcommerceSite() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-gray-400 py-8 px-4">
-        <div className="max-w-7xl mx-auto text-center">
+      <footer style={{
+        backgroundColor: '#111827',
+        color: '#9ca3af',
+        paddingTop: '32px',
+        paddingBottom: '32px',
+        textAlign: 'center'
+      }}>
+        <div style={{ maxWidth: '80rem', margin: '0 auto' }}>
           <p>&copy; 2024 더조은컴퍼니. All rights reserved.</p>
         </div>
       </footer>
     </div>
   );
 }
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<EcommerceSite />);
