@@ -11,7 +11,7 @@ function EcommerceSite() {
   const products = [
     {
       id: 1,
-      name: '식품 상품 1',
+      name: '식품 상 품 1',
       category: '식품류',
       image: 'https://via.placeholder.com/300x300?text=식품1',
       description: '고급 식품'
