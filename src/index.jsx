@@ -80,11 +80,11 @@ function EcommerceSite() {
             height: '64px'
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <ShoppingBag size={32} color="#2563eb" />
+              <ShoppingBag size={32} color="#1e40af" />
               <div style={{
                 fontSize: '24px',
                 fontWeight: 'bold',
-                color: '#2563eb'
+                color: '#1e40af'
               }}>
                 더조은컴퍼니
               </div>
@@ -152,7 +152,7 @@ function EcommerceSite() {
       <section style={{
         paddingTop: '128px',
         paddingBottom: '48px',
-        background: 'linear-gradient(to right, #eff6ff, #e0e7ff)',
+        background: 'linear-gradient(to right, #e5e7eb, #d1d5db)',
         padding: '128px 16px 48px'
       }}>
         <div style={{ maxWidth: '80rem', margin: '0 auto', textAlign: 'center' }}>
@@ -243,7 +243,7 @@ function EcommerceSite() {
                   fontWeight: '600',
                   border: 'none',
                   cursor: 'pointer',
-                  backgroundColor: selectedCategory === category ? '#2563eb' : '#e5e7eb',
+                  backgroundColor: selectedCategory === category ? '#1e40af' : '#e5e7eb',
                   color: selectedCategory === category ? '#fff' : '#374151'
                 }}
               >
@@ -287,7 +287,7 @@ function EcommerceSite() {
                   <div style={{ padding: '24px' }}>
                     <p style={{
                       fontSize: '14px',
-                      color: '#2563eb',
+                      color: '#1e40af',
                       fontWeight: '600',
                       marginBottom: '8px'
                     }}>
@@ -309,7 +309,7 @@ function EcommerceSite() {
                     </p>
                     <button style={{
                       width: '100%',
-                      backgroundColor: '#2563eb',
+                      backgroundColor: '#1e40af',
                       color: '#fff',
                       fontWeight: '600',
                       paddingTop: '8px',
@@ -364,7 +364,7 @@ function EcommerceSite() {
             alignItems: 'center'
           }}>
             <div style={{
-              backgroundColor: '#2563eb',
+              backgroundColor: '#1e40af',
               borderRadius: '8px',
               height: '320px'
             }}></div>
@@ -434,14 +434,14 @@ function EcommerceSite() {
           }}>
             {/* CEO Profile Image */}
             <div style={{
-              backgroundColor: '#e0e7ff',
+              backgroundColor: '#e5e7eb',
               borderRadius: '8px',
               height: '400px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               fontSize: '48px',
-              color: '#2563eb'
+              color: '#1e40af'
             }}>
               대표 사진
             </div>
@@ -465,7 +465,7 @@ function EcommerceSite() {
               </p>
 
               <div style={{
-                borderLeft: '4px solid #2563eb',
+                borderLeft: '4px solid #1e40af',
                 paddingLeft: '24px',
                 marginBottom: '32px'
               }}>
@@ -488,7 +488,7 @@ function EcommerceSite() {
                   <h4 style={{
                     fontSize: '16px',
                     fontWeight: 'bold',
-                    color: '#2563eb',
+                    color: '#1e40af',
                     marginBottom: '8px'
                   }}>
                     유통업에 임하는 자세
@@ -506,7 +506,7 @@ function EcommerceSite() {
                   <h4 style={{
                     fontSize: '16px',
                     fontWeight: 'bold',
-                    color: '#2563eb',
+                    color: '#1e40af',
                     marginBottom: '8px'
                   }}>
                     고객을 생각하는 마음
@@ -528,7 +528,7 @@ function EcommerceSite() {
       {/* Contact Section */}
       <section id="contact" style={{
         padding: '64px 16px',
-        background: 'linear-gradient(to right, #2563eb, #1e40af)',
+        background: 'linear-gradient(to right, #1e40af, #1e3a8a)',
         color: '#fff'
       }}>
         <div style={{ maxWidth: '80rem', margin: '0 auto' }}>
@@ -596,7 +596,7 @@ function EcommerceSite() {
               style={{
                 display: 'inline-block',
                 backgroundColor: '#fff',
-                color: '#2563eb',
+                color: '#1e40af',
                 fontWeight: 'bold',
                 paddingTop: '12px',
                 paddingBottom: '12px',
