@@ -364,10 +364,20 @@ function EcommerceSite() {
             alignItems: 'center'
           }}>
             <div style={{
-              backgroundColor: '#1e40af',
               borderRadius: '8px',
-              height: '320px'
-            }}></div>
+              height: '320px',
+              overflow: 'hidden'
+            }}>
+              <img
+                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80"
+                alt="유통 물류 창고"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover'
+                }}
+              />
+            </div>
             <div>
               <p style={{
                 fontSize: '18px',
@@ -434,16 +444,20 @@ function EcommerceSite() {
           }}>
             {/* CEO Profile Image */}
             <div style={{
-              backgroundColor: '#e5e7eb',
               borderRadius: '8px',
               height: '400px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '48px',
-              color: '#1e40af'
+              overflow: 'hidden',
+              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
             }}>
-              대표 사진
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80"
+                alt="CEO 이시우"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover'
+                }}
+              />
             </div>
 
             {/* CEO Message */}
