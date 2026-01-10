@@ -600,7 +600,16 @@ function EcommerceSite() {
               }}>
                 주소
               </h3>
-              <p style={{ fontSize: '18px' }}>경기도 남양주시 별내3로 322, 402호</p>
+              <p style={{
+                fontSize: '16px',
+                marginBottom: '8px',
+                fontWeight: '600'
+              }}>
+                사무실: 경기도 남양주시 별내3로 322, 402호
+              </p>
+              <p style={{ fontSize: '16px', fontWeight: '600' }}>
+                창고: 경기도 파주시 광탄면 보광로 1278
+              </p>
             </div>
           </div>
 
